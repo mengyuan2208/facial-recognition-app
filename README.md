@@ -1,27 +1,35 @@
-# FacialRecognitionApp
+# Facial Recognition App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Overview
 
-## Development server
+This Facial Recognition App leverages cutting-edge technology to provide real-time facial detection and analysis through both webcam feeds and uploaded images. Designed with privacy and efficiency in mind, our application offers users a seamless experience in identifying and analyzing facial features, including age and gender estimations, without storing personal data.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
 
-## Code scaffolding
+Frontend: Angular, HTML, CSS, TypeScript for a responsive and interactive user interface. face-api.js for facial detection and analysis.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+Clone the repository:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`git clone https://github.com/mengyuan2208/facial-recognition-app.git`
 
-## Running unit tests
+Navigate to the project directory:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`cd facial-recognition-app`
 
-## Running end-to-end tests
+Install NPM packages:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+`npm install`
 
-## Further help
+Start the application:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`ng serve`
+
+The app will be available at http://localhost:4200/.
+
+## Usage
+
+Webcam Mode: Click on "Toggle Camera" to start/stop the webcam feed. Press "Take Picture" to capture an image and analyze it.
+
+Upload Mode: Click on "Upload Image" to choose an image from your device for analysis.
