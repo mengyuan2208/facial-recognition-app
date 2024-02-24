@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>Webcam App</h1>
+    
+    <!-- Webcam Section -->
+    <div class="webcam-section">
+      <webcam
+        [height]="500"
+        [width]="500"
+        [trigger]="triggerObservable"
+        (imageCapture)="handleImage($event)"
+        *ngIf="showWebcam"
+        [allowCameraSwitch]="allowCameraSwitch"
+        [switchCamera]="nextWebcamObservable"
+        [videoOptions]="videoOptions"
+        (cameraSwitched)="cameraWasSwitched($event)"
+        (initError)="handleInitError($event)"
+      ></webcam>
+      <div>
+        <button (click)="toggleWebcam()">Toggle Camera</button>
+        <button (click)="triggerSnapshot()">Take Picture</button>
+      </div>
+    </div>
+    
+    <!-- Upload Section -->
+    <div class="upload-section">
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+    </div>
+  
+    <!-- Photo from Webcam -->
+    <div *ngIf="webcamImage">
+      <h2>Photo</h2>
+      <div *ngIf="isAnalyzing" class="analysis-prompt">Analyzing image, please wait...</div>
+      <div class="image-overlay-container">
+        <img [src]="webcamImage.imageAsDataUrl" />
+        <canvas #overlay></canvas>
+      </div>
+    </div>
+  
+    <!-- Uploaded Photo -->
+    <div *ngIf="uploadedImageDataUrl">
+      <h2>Photo</h2>
+      <div *ngIf="isAnalyzing" class="analysis-prompt">Analyzing image, please wait...</div>
+      <div class="image-overlay-container">
+        <img [src]="uploadedImageDataUrl" />
+        <canvas #overlay></canvas>
+      </div>
+    </div>
+  </div>
+  
